@@ -21,49 +21,8 @@
 #import <Foundation/Foundation.h>
 
 
-@protocol RITimeSource;
+@protocol RITimeSource <NSObject>
 
-@interface RIStopWatch : NSObject
-
-
-#pragma mark - Properties
-
-
-/**
- The elapsedTime value indicates the accumulated running time of the stopwatch since the last reset.
- */
-@property (nonatomic, readonly) NSTimeInterval elapsedTime;
-
-/**
- Indicates whether the stopwatch is running (YES) or stopped (NO).
- */
-@property (nonatomic, readonly) BOOL running;
-
-
-#pragma mark - Creation & Initialization
-
-
-/**
- Designated initializer
- 
- @param timeSource This parameter is optional. If no timeSource is provided RIStopWatch will use its own NSDate-backed time source.
- */
-- (id)initWithTimeSource:(id<RITimeSource>)timeSource;
-
-
-#pragma mark - Stop Watch Control
-
-
-- (void)start;
-
-- (void)stop;
-
-/**
- Resets the elapsedTime to 0. If the stopwatch is running when reset is called the watch will continue to run.
- */
-- (void)reset;
-
+- (NSDate *)now;
 
 @end
-
-

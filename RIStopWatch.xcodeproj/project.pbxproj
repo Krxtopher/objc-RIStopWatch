@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		98923A8B188EA74F0057B125 /* OCHamcrestIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98923A89188EA74F0057B125 /* OCHamcrestIOS.framework */; };
+		98923A8C188EA74F0057B125 /* OCMockitoIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98923A8A188EA74F0057B125 /* OCMockitoIOS.framework */; };
 		989EE7611889E5F900B0B3A3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 989EE7601889E5F900B0B3A3 /* Foundation.framework */; };
 		989EE7661889E5F900B0B3A3 /* RIStopWatch.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 989EE7651889E5F900B0B3A3 /* RIStopWatch.h */; };
 		989EE7681889E5F900B0B3A3 /* RIStopWatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 989EE7671889E5F900B0B3A3 /* RIStopWatch.m */; };
@@ -19,8 +21,6 @@
 		989EE7B11889E64200B0B3A3 /* libExpecta-ios-universal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 989EE7AB1889E64200B0B3A3 /* libExpecta-ios-universal.a */; };
 		989EE7B31889E64200B0B3A3 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 989EE7AD1889E64200B0B3A3 /* LICENSE */; };
 		989EE7B41889E64200B0B3A3 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 989EE7B01889E64200B0B3A3 /* README.md */; };
-		989EE7BC1889E8C200B0B3A3 /* OCHamcrestIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 989EE7BA1889E8C200B0B3A3 /* OCHamcrestIOS.framework */; };
-		989EE7BD1889E8C200B0B3A3 /* OCMockitoIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 989EE7BB1889E8C200B0B3A3 /* OCMockitoIOS.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +47,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		98337F0B1899EB140098885D /* RITimeSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RITimeSource.h; sourceTree = "<group>"; };
+		98923A89188EA74F0057B125 /* OCHamcrestIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OCHamcrestIOS.framework; path = Frameworks/OCHamcrestIOS.framework; sourceTree = "<group>"; };
+		98923A8A188EA74F0057B125 /* OCMockitoIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OCMockitoIOS.framework; path = Frameworks/OCMockitoIOS.framework; sourceTree = "<group>"; };
 		989EE75D1889E5F900B0B3A3 /* libRIStopWatch.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRIStopWatch.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		989EE7601889E5F900B0B3A3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		989EE7641889E5F900B0B3A3 /* RIStopWatch-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RIStopWatch-Prefix.pch"; sourceTree = "<group>"; };
@@ -100,8 +103,6 @@
 		989EE7AE1889E64200B0B3A3 /* NSObject+Expecta.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Expecta.h"; sourceTree = "<group>"; };
 		989EE7AF1889E64200B0B3A3 /* NSValue+Expecta.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSValue+Expecta.h"; sourceTree = "<group>"; };
 		989EE7B01889E64200B0B3A3 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
-		989EE7BA1889E8C200B0B3A3 /* OCHamcrestIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OCHamcrestIOS.framework; path = "../nike-music-engine/NMEPrototype/NMEPrototypeTests/Frameworks/OCHamcrestIOS.framework"; sourceTree = "<group>"; };
-		989EE7BB1889E8C200B0B3A3 /* OCMockitoIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OCMockitoIOS.framework; path = "../nike-music-engine/NMEPrototype/NMEPrototypeTests/Frameworks/OCMockitoIOS.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,8 +118,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				989EE7BC1889E8C200B0B3A3 /* OCHamcrestIOS.framework in Frameworks */,
-				989EE7BD1889E8C200B0B3A3 /* OCMockitoIOS.framework in Frameworks */,
+				98923A8B188EA74F0057B125 /* OCHamcrestIOS.framework in Frameworks */,
+				98923A8C188EA74F0057B125 /* OCMockitoIOS.framework in Frameworks */,
 				989EE7B11889E64200B0B3A3 /* libExpecta-ios-universal.a in Frameworks */,
 				989EE76F1889E5F900B0B3A3 /* XCTest.framework in Frameworks */,
 				989EE7721889E5F900B0B3A3 /* UIKit.framework in Frameworks */,
@@ -152,8 +153,8 @@
 		989EE75F1889E5F900B0B3A3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				989EE7BA1889E8C200B0B3A3 /* OCHamcrestIOS.framework */,
-				989EE7BB1889E8C200B0B3A3 /* OCMockitoIOS.framework */,
+				98923A89188EA74F0057B125 /* OCHamcrestIOS.framework */,
+				98923A8A188EA74F0057B125 /* OCMockitoIOS.framework */,
 				989EE7601889E5F900B0B3A3 /* Foundation.framework */,
 				989EE76E1889E5F900B0B3A3 /* XCTest.framework */,
 				989EE7711889E5F900B0B3A3 /* UIKit.framework */,
@@ -164,9 +165,10 @@
 		989EE7621889E5F900B0B3A3 /* RIStopWatch */ = {
 			isa = PBXGroup;
 			children = (
+				989EE7631889E5F900B0B3A3 /* Supporting Files */,
 				989EE7651889E5F900B0B3A3 /* RIStopWatch.h */,
 				989EE7671889E5F900B0B3A3 /* RIStopWatch.m */,
-				989EE7631889E5F900B0B3A3 /* Supporting Files */,
+				98337F0B1899EB140098885D /* RITimeSource.h */,
 			);
 			path = RIStopWatch;
 			sourceTree = "<group>";
@@ -183,8 +185,8 @@
 			isa = PBXGroup;
 			children = (
 				989EE7861889E61D00B0B3A3 /* Libraries */,
-				989EE77C1889E5F900B0B3A3 /* RIStopWatchTests.m */,
 				989EE7771889E5F900B0B3A3 /* Supporting Files */,
+				989EE77C1889E5F900B0B3A3 /* RIStopWatchTests.m */,
 			);
 			path = RIStopWatchTests;
 			sourceTree = "<group>";
@@ -476,12 +478,18 @@
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 					/Users/kschultz/Git/OCMockito/Frameworks,
 					"/Users/kschultz/Git/nike-music-engine/NMEPrototype/NMEPrototypeTests/Frameworks",
+					/Users/kschultz/Git/RIStopWatch/Frameworks,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RIStopWatch/RIStopWatch-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					RIStopWatch/,
 				);
 				INFOPLIST_FILE = "RIStopWatchTests/RIStopWatchTests-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
@@ -509,9 +517,15 @@
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 					/Users/kschultz/Git/OCMockito/Frameworks,
 					"/Users/kschultz/Git/nike-music-engine/NMEPrototype/NMEPrototypeTests/Frameworks",
+					/Users/kschultz/Git/RIStopWatch/Frameworks,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RIStopWatch/RIStopWatch-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					RIStopWatch/,
+				);
 				INFOPLIST_FILE = "RIStopWatchTests/RIStopWatchTests-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -547,6 +561,7 @@
 				989EE7821889E5F900B0B3A3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		989EE7831889E5F900B0B3A3 /* Build configuration list for PBXNativeTarget "RIStopWatchTests" */ = {
 			isa = XCConfigurationList;
@@ -555,6 +570,7 @@
 				989EE7851889E5F900B0B3A3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

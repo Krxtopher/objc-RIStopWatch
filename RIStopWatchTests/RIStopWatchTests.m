@@ -1,13 +1,24 @@
-//
-//  RIStopWatchTests.m
-//  RIStopWatchTests
-//
-//  Created by Kris Schultz on 1/17/14.
-//  Copyright (c) 2014 Resource. All rights reserved.
-//
+// Copyright (c) 2014 Resource LLC
+
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+
+// The above copyright notice and this permission notice shall be included in
+// all copies or substantial portions of the Software.
+
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+// SOFTWARE.
 
 #import <XCTest/XCTest.h>
-
 #define EXP_SHORTHAND
 #import "Expecta.h"
 #define HC_SHORTHAND
@@ -15,6 +26,7 @@
 #define MOCKITO_SHORTHAND
 #import <OCMockitoIOS/OCMockitoIOS.h>
 #import "RIStopWatch.h"
+#import "RITimeSource.h"
 
 
 @interface RIStopWatchTests : XCTestCase
@@ -44,7 +56,7 @@
     NSDate *fakeStartTime = [NSDate distantPast];
     NSDate *fakeUpdateTime = [fakeStartTime dateByAddingTimeInterval:30];
     
-    id<TimeSource> timeSource = mockProtocol(@protocol(TimeSource));
+    id<RITimeSource> timeSource = mockProtocol(@protocol(RITimeSource));
     [given([timeSource now]) willReturn:fakeStartTime];
     
     stopWatch = [[RIStopWatch alloc] initWithTimeSource:timeSource];
@@ -68,7 +80,7 @@
     NSDate *restartTime = [stopTime dateByAddingTimeInterval:25];
     NSDate *finalCheckTime = [restartTime dateByAddingTimeInterval:3];
     
-    id<TimeSource> timeSource = mockProtocol(@protocol(TimeSource));
+    id<RITimeSource> timeSource = mockProtocol(@protocol(RITimeSource));
     [given([timeSource now]) willReturn:startTime];
     
     stopWatch = [[RIStopWatch alloc] initWithTimeSource:timeSource];
@@ -88,6 +100,33 @@
     // Verify
     
     expect(stopWatch.elapsedTime).to.equal(13);
+}
+
+- (void)test_elapsedTime_afterRunStop_shouldNoLongerTrackTime
+{
+    // Set up
+    
+    NSDate *startTime = [NSDate distantPast];
+    NSDate *stopTime = [startTime dateByAddingTimeInterval:10];
+    NSDate *postStopTime = [stopTime dateByAddingTimeInterval:25];
+    
+    id<RITimeSource> timeSource = mockProtocol(@protocol(RITimeSource));
+    [given([timeSource now]) willReturn:startTime];
+    
+    stopWatch = [[RIStopWatch alloc] initWithTimeSource:timeSource];
+    
+    // Exercise
+    
+    [stopWatch start];
+    
+    [given([timeSource now]) willReturn:stopTime];
+    [stopWatch stop];
+    
+    [given([timeSource now]) willReturn:postStopTime];
+    
+    // Verify
+    
+    expect(stopWatch.elapsedTime).to.equal(10);
 }
 
 - (void)test_running_givenNewInstance_shouldBeNo
@@ -117,7 +156,7 @@
     NSDate *fakeStartTime = [NSDate distantPast];
     NSDate *fakeUpdateTime = [fakeStartTime dateByAddingTimeInterval:30];
     
-    id<TimeSource> timeSource = mockProtocol(@protocol(TimeSource));
+    id<RITimeSource> timeSource = mockProtocol(@protocol(RITimeSource));
     [given([timeSource now]) willReturn:fakeStartTime];
     
     stopWatch = [[RIStopWatch alloc] initWithTimeSource:timeSource];
@@ -158,7 +197,7 @@
     NSDate *restartTime = [stopTime dateByAddingTimeInterval:25];
     NSDate *finalCheckTime = [restartTime dateByAddingTimeInterval:3];
     
-    id<TimeSource> timeSource = mockProtocol(@protocol(TimeSource));
+    id<RITimeSource> timeSource = mockProtocol(@protocol(RITimeSource));
     [given([timeSource now]) willReturn:startTime];
     
     stopWatch = [[RIStopWatch alloc] initWithTimeSource:timeSource];
