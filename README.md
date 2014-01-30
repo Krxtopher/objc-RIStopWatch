@@ -14,7 +14,7 @@ RIStopWatch is a simple and useful class for tracking elapsed time.
 
 ## Usage
 
-````objectivec
+```objc
 RIStopWatch *watch = [RIStopWatch new];
 [watch start];
 ... // 2 seconds later
@@ -26,4 +26,10 @@ NSLog(@"%f", watch.elapsedTime); // "5"
 [watch reset];
 ... // 1 second later
 NSLog(@"%f", watch.elapsedTime); // "1"
-````
+```
+
+For more usage detail see the [RIStopWatch.h header file](RIStopWatch/RIStopWatch.h).
+
+## License
+2014 © [Resource LLC](http://resource.com)  
+Licensed under the [MIT License](https://github.com/resource/Front-End-Standards/blob/master/LICENSE.md)
