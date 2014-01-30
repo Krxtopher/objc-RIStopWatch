@@ -5,12 +5,13 @@ RIStopWatch is a simple and useful class for tracking elapsed time.
 ## Installation
 
 1. Clone or download a copy of this repository.
-2. Copy the following three files into your own application:
+2. Copy the following three files into your own Xcode project:
 	- RIStopWatch.h
 	- RIStopWatch.m
 	- RITimeSource.h
-3. Add the following #import statement to any class in which you'd like to use an RIStopWatch:
-    #import "RIStopWatch.h"
+3. Add the following #import statement to top of any class in which you'd like to use an RIStopWatch:
+
+    `#import "RIStopWatch.h"`
 
 ## Usage
 
