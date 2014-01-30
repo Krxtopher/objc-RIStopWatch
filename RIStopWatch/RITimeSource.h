@@ -21,6 +21,9 @@
 #import <Foundation/Foundation.h>
 
 
+/**
+ In most situations you can remain blissfully unaware of this protocol's existence. If, however, you would like to create your own custom time source for use with RIStopWatch (which is rare) simply implement this protocol and pass your custom implementation as a dependency via RIStopWatch's initWithTimeSource: method.
+ */
 @protocol RITimeSource <NSObject>
 
 - (NSDate *)now;
